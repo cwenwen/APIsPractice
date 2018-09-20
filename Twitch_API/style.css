@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url(https://i.imgur.com/oAf6eLy.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: black;
+}
+.navbar-brand {
+  color: white !important;
+}
+
+.main--title {
+  color: #e7f3fd;
+}
+
+.main--subtitle {
+  color: #b8dafa;
+}
+
+.streambox{
+  color: white;
+  opacity: 0.8;
+  background-color: black;
+  transition: .2s;
+}
+
+.streambox:hover {
+  color: white;
+  text-decoration: none;
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 0 2rem black;
+  z-index: 1;
+}
+
+.footer a {
+  color: rgba(255,255,255,.5);
+
+}
+.footer a:hover {
+  color: white;
+  text-decoration: none;
+}

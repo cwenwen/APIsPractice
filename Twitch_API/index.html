@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A practice with Twitch API, showing the most popular games at the moment" />
+  <meta name="keywords" content="HTML,CSS,JavaScript,Twitch,Ajax,API,Bootstrap" />
+  <meta name="author" content="Wenwen Cheng" />
+  <meta property="og:title" content="Twitch Live Games" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="A practice with Twitch API, showing the most popular games at the moment" />
+  <meta property="og:url" content="https://cwenwen.github.io/APIsPractice/Twitch_API/" />
+  <meta property="og:image" content="https://i.imgur.com/oAf6eLy.jpg" />
+  <title>Twitch Live Games</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand ">Twitch Live Games</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="game--1 nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="game--2 nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="game--3 nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="game--4 nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="game--5 nav-link" href="#"></a>
+        </li>
+      </ul>
+      <span class="navbar-text text-light">
+        Top 5 popular games on Twitch <mark class="bg-light">NOW</mark>
+      </span>
+    </div>
+  </nav>
+  <h1 class="main--title mt-3 display-4 text-center">Twitch Live Games</h1>
+  <p class="main--subtitle lead text-center">
+    Top 8 popular live streams sorted by number of current viewers
+  </p>
+  <div class="container">
+    <div class="streams row"></div>
+    <div class="footer text-muted text-center m-4">This page is created by <a href="https://github.com/cwenwen">me</a> - <a href="https://github.com/cwenwen/APIsPractice/Twitch_API/">View on Github</a></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
