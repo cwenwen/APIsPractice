@@ -4,13 +4,10 @@ const qAll = (selecror) => document.querySelectorAll(selecror);
 // Global variables
 
 const myClientID = 'jdsl3lgf1c8gcxi44u29sm30m015n3';
-let gameResp;
 let gameID;
-let streamResp;
 let userID;
-let userResp;
 
-getTop5GamesFromAPI(function () {
+getTop5GamesFromAPI(function (gameResp) {
 
   // Show game names on buttons, record game IDs
   for (let i = 0; i < 5; i++) {
@@ -21,9 +18,9 @@ getTop5GamesFromAPI(function () {
   gameID = q('.game--1').id;
   q('.main--title').innerText = q('.game--1').innerText;
 
-  getStreamsFromAPI(function() {
+  getStreamsFromAPI(function(streamResp) {
     for (let i = 0; i < streamResp.data.length; i++) {
-      let streambox = makeStreambox(i);
+      let streambox = makeStreambox(i, streamResp);
       q('.streams').appendChild(streambox);
     }
   })
@@ -34,9 +31,9 @@ for (let i = 0; i < 5; i++) {
     gameID = e.target.id;
     q('.main--title').innerText = e.target.innerText;
     q('.streams').innerHTML = '';
-    getStreamsFromAPI(function() {
+    getStreamsFromAPI(function(streamResp) {
       for (let i = 0; i < streamResp.data.length; i++) {
-        let streambox = makeStreambox(i);
+        let streambox = makeStreambox(i, streamResp);
         q('.streams').appendChild(streambox);
       }
     })
@@ -55,7 +52,7 @@ function getTop5GamesFromAPI(callback) {
   xhr.responseType = 'json';
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      gameResp = xhr.response;
+      let gameResp = xhr.response;
       callback(gameResp);
     }
   }
@@ -72,7 +69,7 @@ function getStreamsFromAPI(callback) {
   xhr.responseType = 'json';
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      streamResp = xhr.response;
+      let streamResp = xhr.response;
       callback(streamResp);
     }
   }
@@ -88,14 +85,14 @@ function getUserFromAPI(callback) {
   xhr.responseType = 'json';
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      userResp = xhr.response;
+      let userResp = xhr.response;
       callback(userResp);
     }
   }
   xhr.send();
 }
 
-function makeStreambox(i) {
+function makeStreambox(i, streamResp) {
   let streambox = document.createElement("a");
   streambox.classList.add('streambox', 'col-12', 'col-md-6', 'col-lg-3', 'p-1');
 
@@ -105,7 +102,7 @@ function makeStreambox(i) {
   
   // Get user info
   userID = streamResp.data[i].user_id;
-  getUserFromAPI(function() {
+  getUserFromAPI(function(userResp) {
 
     streambox.innerHTML = `
       <img class="stream--thumbnail img-fluid" src=${thumbnailURL} alt="Stream thumbnail" />
