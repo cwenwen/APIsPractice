@@ -1,3 +1,3 @@
-# My practice for fetching APIs
+# My Practice For Fetching APIs
 
 ### [Twitch API](https://cwenwen.github.io/APIsPractice/Twitch_API/)
